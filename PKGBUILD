@@ -1,9 +1,9 @@
 # Maintainer: manuel (see forum.antergos.com)
 
 pkgname=remirror
+pkgdesc="Ranks Antergos and Arch mirrors, somewhat resembles 'reflector'."
 pkgver=0.1
 pkgrel=1
-pkgdesc="Ranks Antergos and Arch mirrors, somewhat resembles 'reflector'."
 arch=('any')
 license=('GPL')
 depends=('bash' 'curl')
