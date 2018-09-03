@@ -1,5 +1,5 @@
 # remirror
-Mirror ranking for Antergos and Arch. Does the same as reflector-antergos ans more.
+Mirror ranking for Antergos and Arch. Does the same as reflector-antergos and more.
 ## Usage
 remirror -h
 ## Changes
