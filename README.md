@@ -3,6 +3,9 @@ Mirror ranking for Antergos and Arch. Does the same as reflector-antergos and mo
 ## Usage
 remirror --help
 ## Changes
+0.1.14: 2018-Sep-15
+- Fixed a bug with the country options.
+
 0.1.13: 2018-Sep-15
 - Added support for ranking both Antergos and Arch mirrors in one pass. Use option --os=both (the default now) with options --c-antergos=<countries> and --c-arch=<countries>.
 - Note that remirror-bash-completion cannot separate Antergos and Arch mirror countries with the old option --c=<countries>. As a workaround it lists both Antergos and Arch mirror countries.
