@@ -3,6 +3,9 @@ Mirror ranking for Antergos and Arch. Does the same as reflector-antergos and mo
 ## Usage
 remirror --help
 ## Changes
+0.1.17: 2018-Sep-15
+- Changed 'su -c' to 'sudo' (it is used when saving lists to /etc/pacman.d).
+
 0.1.15: 2018-Sep-15
 - Fixed some bugs with the country options.
 
