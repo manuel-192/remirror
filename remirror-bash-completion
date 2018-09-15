@@ -23,70 +23,49 @@ _mycountryselector()
 {
     local cur="$1"
     local countries
-
-    if [ 0 -eq 1 ] ; then
-        local arch_countries antergos_countries
-
-        # Antergos countries:
-        # (removed dups: Bulgaria Canada China Denmark France Germany Greece Hungary
-        #                Japan Netherlands Portugal Russia Spain Sweden)
-        antergos_countries=(
-            'Automated Mirror Selection'
-            'Czech Republic' England USA
-        )
-
-        # Arch countries, in addition to above:
-        arch_countries+=(
-            Worldwide
-            Australia Austria Bangladesh Belarus Belgium
-            'Bosnia and Herzegovina' Brazil Bulgaria Canada Chile
-            China Colombia Croatia Czechia Denmark Ecuador Finland
-            France Germany Greece 'Hong Kong' Hungary Iceland India
-            Indonesia Iran Ireland Israel Italy Japan Kazakhstan
-            Latvia Lithuania Luxembourg Macedonia Mexico Netherlands
-            'New Caledonia' 'New Zealand' Norway Philippines Poland
-            Portugal Qatar Romania Russia Serbia Singapore Slovakia
-            Slovenia 'South Africa' 'South Korea' Spain Sweden Switzerland
-            Taiwan Thailand Turkey Ukraine 'United Kingdom' 'United States'
-            Vietnam
-        )
-    fi
-
     local countries_string
     local country
+
+    local countries_antergos=(
+        'Automated Mirror Selection'
+        Bulgaria Canada China 'Czech Republic' Denmark England
+        France Germany Greece Hungary
+        Japan Netherlands Portugal Russia Spain Sweden USA
+    )
+    local countries_arch=(
+        Worldwide
+        Australia Austria Bangladesh Belarus Belgium
+        'Bosnia and Herzegovina' Brazil Bulgaria Canada Chile
+        China Colombia Croatia Czechia Denmark Ecuador Finland
+        France Germany Greece 'Hong Kong' Hungary Iceland India
+        Indonesia Iran Ireland Israel Italy Japan Kazakhstan
+        Latvia Lithuania Luxembourg Macedonia Mexico Netherlands
+        'New Caledonia' 'New Zealand' Norway Philippines Poland
+        Portugal Qatar Romania Russia Serbia Singapore Slovakia
+        Slovenia 'South Africa' 'South Korea' Spain Sweden Switzerland
+        Taiwan Thailand Turkey Ukraine 'United Kingdom' 'United States'
+        Vietnam
+    )
+
     local osfile=/tmp/remirror-os.tmp
     local os
     if [ -r $osfile ] ; then
-        os=$(cat $osfile)
+        os=$(cat $osfile | sed 's|,$||')
     fi
 
     case "$os" in
         Antergos)
-            countries=(
-                'Automated Mirror Selection'
-                Bulgaria Canada China 'Czech Republic' Denmark England
-                France Germany Greece Hungary
-                Japan Netherlands Portugal Russia Spain Sweden USA
-            )
+            countries=( "${countries_antergos[@]}" )
             ;;
         Arch)
-            countries=(
-                Worldwide
-                Australia Austria Bangladesh Belarus Belgium
-                'Bosnia and Herzegovina' Brazil Bulgaria Canada Chile
-                China Colombia Croatia Czechia Denmark Ecuador Finland
-                France Germany Greece 'Hong Kong' Hungary Iceland India
-                Indonesia Iran Ireland Israel Italy Japan Kazakhstan
-                Latvia Lithuania Luxembourg Macedonia Mexico Netherlands
-                'New Caledonia' 'New Zealand' Norway Philippines Poland
-                Portugal Qatar Romania Russia Serbia Singapore Slovakia
-                Slovenia 'South Africa' 'South Korea' Spain Sweden Switzerland
-                Taiwan Thailand Turkey Ukraine 'United Kingdom' 'United States'
-                Vietnam
-            )
+            countries=( "${countries_arch[@]}" )
+            ;;
+        both)
+            countries=( "${countries_antergos[@]}" )
+            countries+=( "${countries_arch[@]}" )
             ;;
         *)
-            printf "\n os = unknown!\n" >&2
+            printf "\n os '$os' is unknown!\n" >&2
             COMPREPLY=()
             ;;
     esac
@@ -115,6 +94,12 @@ _remirror()
     fi
 
     case "$prev" in
+        *remirror)
+            echo "Antergos" > $osfile
+            ;;
+    esac
+
+    case "$prev" in
         -h|--help|--of|--quiet|--debug)
             return
             ;;
@@ -122,8 +107,18 @@ _remirror()
             _mycountryselector "$cur"
             return
             ;;
+        --c-arch)
+            echo "Arch" > $osfile
+            _mycountryselector "$cur"
+            return
+            ;;
+        --c-antergos)
+            echo "Antergos" > $osfile
+            _mycountryselector "$cur"
+            return
+            ;;
         --os)
-            _mylistselector "$cur" "Antergos Arch"
+            _mylistselector "$cur" "Antergos Arch both"
             if [ -n "$COMPREPLY" ] ; then
                 echo "${COMPREPLY[0]}" > $osfile
             fi
@@ -146,7 +141,7 @@ _remirror()
             ;;
     esac
 
-    local opts="--os= --c= --p= --tm= --tr= --save="
+    local opts="--os= --c= --c-arch= --c-antergos= --p= --tm= --tr= --save="
     opts+=" --quiet --help -h  --of --debug"
 
     case "$cur" in
