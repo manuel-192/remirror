@@ -3,6 +3,9 @@ Mirror ranking for Antergos and Arch. Does the same as reflector-antergos and mo
 ## Usage
 remirror --help
 ## Changes
+0.1.10: 2018-Sep-15
+- Fixed a bug with the --help option, thanks joekamprad!
+
 0.1.9: 2018-Sep-15
 - Added option --save={no|yes|backup} that allows saving the ranked mirrorlist file directly into /etc/pacman.d.
 
