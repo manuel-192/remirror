@@ -3,6 +3,11 @@ Mirror ranking for Antergos and Arch. Does the same as reflector-antergos and mo
 ## Usage
 remirror --help
 ## Changes
+0.1.20: 2018-Oct-04
+- Added option --list to show available mirror countries.
+- By default, only https mirrors are ranked.
+- Streamlined how mirror list saving is done.
+
 0.1.18: 2018-Sep-15
 - Changed 'su -c' to 'sudo' (it is used when saving lists to /etc/pacman.d).
 
