@@ -5,6 +5,7 @@ remirror --help
 ## Changes
 0.1.28: 2018-Dec-09
 - Added option --version that show the current version number.
+- Added systemd service timer for making periodical mirror update.
 
 0.1.23: 2018-Oct-08
 - Minor cleanups.
