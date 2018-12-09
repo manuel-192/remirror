@@ -3,6 +3,9 @@ Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](http
 ## Usage
 remirror --help
 ## Changes
+0.1.27: 2018-Dec-09
+- Added option --version that show the current version number.
+
 0.1.23: 2018-Oct-08
 - Minor cleanups.
 
