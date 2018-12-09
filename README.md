@@ -4,7 +4,7 @@ Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](http
 remirror --help
 ## Changes
 0.1.29: 2018-Dec-09
-- Added support for config file /etc/remirror.conf. If it exists, it will be sourced. Currently it may contain the following variables: REMIRROR_PREOPTIONS and REMIRROR_POSTOPTIONS; they may include any remirror options.
+- Added support for config file <b>/etc/remirror.conf</b>. If it exists, it will be sourced. Currently it may contain the following variables: REMIRROR_PREOPTIONS and REMIRROR_POSTOPTIONS; they may include any remirror options.
 - Added option --version that show the current version number.
 - Added systemd service timer for making periodical mirror update.
 
