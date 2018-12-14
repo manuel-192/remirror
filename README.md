@@ -5,7 +5,7 @@ remirror --help
 ## Changes
 0.1.32: 2018-Dec-14
 - Added validity check for the generated mirror files.
-- Added new option --sleep for determining initial sleep.
+- Added new option --sleep for determining initial sleep time.
 - The default wait time for fetching the reference mirrorlist is now 60 seconds instead of 10.
 
 0.1.29: 2018-Dec-09
