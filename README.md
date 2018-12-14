@@ -3,8 +3,10 @@ Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](http
 ## Usage
 remirror --help
 ## Changes
-0.1.30: 2018-Dec-14
+0.1.32: 2018-Dec-14
 - Added validity check for the generated mirror files.
+- Added new option --sleep for determining initial sleep.
+- The default wait time for fetching the reference mirrorlist is now 60 seconds instead of 10.
 
 0.1.29: 2018-Dec-09
 - Added support for config file <b>/etc/remirror.conf</b>. If it exists, it will be sourced. Currently it may contain the following variables: REMIRROR_PREOPTIONS and REMIRROR_POSTOPTIONS; they may include any remirror options.
