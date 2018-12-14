@@ -3,6 +3,7 @@ Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](http
 ## Usage
 remirror --help
 ## Changes
+
 0.1.30: 2018-Dec-14
 - Added validity check for the generated mirror files.
 0.1.29: 2018-Dec-09
