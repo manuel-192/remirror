@@ -1,9 +1,0 @@
-[Unit]
-Description=Updates /etc/pacman.d/antergos-mirrorlist and /etc/pacman.d/mirrorlist
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/remirror --save=yes --p=https --sleep=60
-
-[Install]
-WantedBy=remirror.timer
