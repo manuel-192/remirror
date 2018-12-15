@@ -1,0 +1,9 @@
+[Unit]
+Description=remirror updates mirror lists in /etc/pacman.d
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/remirror --save=backup1 --p=https --sleep=60
+
+[Install]
+WantedBy=remirror.timer
