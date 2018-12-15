@@ -3,8 +3,9 @@ Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](http
 ## Usage
 remirror --help
 ## Changes
-0.1.33: 2018-Dec-15
+0.1.34: 2018-Dec-15
 - Added new value 'backup1' for option --save, it keeps only one backup instead of many.
+- Added option --args that show all given parameters, including from the config file.
 
 0.1.32: 2018-Dec-14
 - Added validity check for the generated mirror files.
