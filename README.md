@@ -3,6 +3,8 @@ Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](http
 ## Usage
 remirror --help
 ## Changes
+0.1.36: 2018-Dec-16
+- Changed default action for option --save from <i>no</i> to <i>backup1</i>.
 0.1.35: 2018-Dec-15
 - Added new value 'backup1' for option --save, it keeps only one backup instead of many.
 - Added option --args that show all given parameters, including from the config file.
