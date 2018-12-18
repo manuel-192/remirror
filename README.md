@@ -8,7 +8,7 @@ remirror --help
 - Added option --result that shows the resulting mirror list file(s) before saving them.
 - Related to the --result option, an environment variable REMIRROR_VIEWER can be set to have the command name of your favorite editor/viewer, e.g. "gedit" or "kate". The variable value is used for showing the file(s).
 - Note: option --os is not really needed and becoming obsolete.
-- Minor corrections to error output.
+- Minor modifications to error output.
 
 0.1.36: 2018-Dec-16
 - Changed default action for option --save from <i>no</i> to <i>backup1</i>.
