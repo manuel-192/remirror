@@ -3,7 +3,7 @@
 pkgname=remirror
 pkgdesc="Ranks Antergos and Arch mirrors, somewhat resembles 'reflector', and replaces reflector-antergos."
 pkgver=0.1.41
-pkgrel=2
+pkgrel=1
 arch=('any')
 license=('GPL')
 depends=('bash' 'curl')
