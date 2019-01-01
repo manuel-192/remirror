@@ -4,6 +4,10 @@ Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](http
 remirror --help
 ## Changes
 
+0.1.41: 2019-Jan-01
+- Updated help.
+- Updated bash completion file.
+
 0.1.40: 2019-Jan-01
 - Added option --x for excluding specific mirrors from ranking.
 
