@@ -3,7 +3,7 @@
 pkgname=remirror
 pkgdesc="Ranks Antergos and Arch mirrors, somewhat resembles 'reflector', and replaces reflector-antergos."
 pkgver=0.1.41
-pkgrel=1
+pkgrel=2
 arch=('any')
 license=('GPL')
 depends=('bash' 'curl')
@@ -25,6 +25,6 @@ package() {
   cd $srcdir
   install -Dm755 ${pkgname}-$pkgver $pkgdir/usr/bin/$pkgname
   install -Dm644 ${pkgname}-bash-completion $pkgdir/usr/share/bash-completion/completions/$pkgname
-  install -Dm644 ${pkgname}.timer           $pkgdir/etc/systemd/system/${pkgname}.timer
-  install -Dm644 ${pkgname}.service         $pkgdir/etc/systemd/system/${pkgname}.service
+  install -Dm644 ${pkgname}.timer           $pkgdir/usr/lib/systemd/system/${pkgname}.timer
+  install -Dm644 ${pkgname}.service         $pkgdir/usr/lib/systemd/system/${pkgname}.service
 }
