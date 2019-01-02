@@ -6,7 +6,7 @@ remirror --help
 
 0.1.41-2: 2019-Jan-02
 - Moved remirror.timer and remirror.service to /usr/lib/systemd/system. Please
-  - if you have enabled remirror.timer, disable it first
+  - if you have enabled remirror.timer, disable it first (systemctl disable remirror.timer)
   - and then remove these two files manually from the old location at /etc/systemd/system
 
 0.1.41: 2019-Jan-01
