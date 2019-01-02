@@ -4,6 +4,11 @@ Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](http
 remirror --help
 ## Changes
 
+0.1.41-2: 2019-Jan-02
+- Moved remirror.timer and remirror.service to /usr/lib/systemd/system. Please
+-- if you have enabled remirror.timer, disable it first
+-- then remove these files from the old location at /etc/systemd/system
+
 0.1.41: 2019-Jan-01
 - Updated help.
 - Updated bash completion file.
