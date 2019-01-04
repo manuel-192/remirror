@@ -4,6 +4,9 @@ Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](http
 remirror --help
 ## Changes
 
+0.1.44: 2019-Jan-04
+- Added automatic call to "pacman -Syy" after mirror lists are updated.
+
 0.1.42: 2019-Jan-04
 - Added more detailed display about mirror connection failures.
 - Added option --no-config for not using the config file. Note that this option, if used, must be the first on the command line.
