@@ -4,6 +4,10 @@ Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](http
 remirror --help
 ## Changes
 
+0.1.45: 2019-Jan-05
+- Options --c, --c-arch and --c-antergos can now use certain country names from Arch and Antergos mirror lists interchangeably, e.g. "USA" and "United_States".
+- Option --help provides more examples.
+
 0.1.44: 2019-Jan-04
 - Added automatic call to "pacman -Syy" after mirror lists are updated.
 
