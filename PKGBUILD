@@ -2,7 +2,7 @@
 
 pkgname=remirror
 pkgdesc="Ranks Antergos and Arch mirrors, somewhat resembles 'reflector', and replaces reflector-antergos."
-pkgver=0.1.44
+pkgver=0.1.45
 pkgrel=1
 arch=('any')
 license=('GPL')
@@ -15,7 +15,7 @@ source=(
   "$url/raw/master/${pkgname}.timer"
 )
 sha512sums=(
-  '5a202699579ce86af6ef9101ea07f601ad3fccfd67627710f105a01daabd778f9285e702aac6085f9a8223d6d6041a989a10a1273db56907728a5789f07a720a'
+  '60e8bf5c9aa6377b472b72ec522b96f788a9e8bca288fcbbadc484823959422627dc6c6e7719ee81103abf17f953ef079bfd9fba6a41b3029f9e1daa02f16eda'
   'bac3c0752bf8d40320c474ed4bf8448e8859f84c6a48ab7ead472def3425a8ae1015ac5df5c2a870bd0daca625ce50f72112125468287532b2431687921ca282'
   '73c10c7de62b776c711034765303757dd4c03797caecd2f4bab7691f146477f87dfe9fd1fbb5b1203e334ecee0b8454a96e26954d6aaff9b59cc9ce7c448dbbe'
   'f90e757080ac298c1bb5c00d061e0a7019f1a74b28befa6967be6d284c311b4ffe5fc37fd4f4c530262c8cd918b3e1848e5eca145f496f48ef659a4ac6ec99db'
