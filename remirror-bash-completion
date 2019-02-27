@@ -26,26 +26,39 @@ _mycountryselector()
     local countries_string
     local country
 
-    local countries_antergos=(
-        'Automated Mirror Selection'
-        Bulgaria Canada China 'Czech Republic' Denmark England
-        France Germany Greece Hungary
-        Japan Netherlands Portugal Russia Spain Sweden USA
-    )
-    local countries_arch=(
-        Worldwide
-        Australia Austria Bangladesh Belarus Belgium
-        'Bosnia and Herzegovina' Brazil Bulgaria Canada Chile
-        China Colombia Croatia Czechia Denmark Ecuador Finland
-        France Germany Greece 'Hong Kong' Hungary Iceland India
-        Indonesia Iran Ireland Israel Italy Japan Kazakhstan
-        Latvia Lithuania Luxembourg Macedonia Mexico Netherlands
-        'New Caledonia' 'New Zealand' Norway Philippines Poland
-        Portugal Qatar Romania Russia Serbia Singapore Slovakia
-        Slovenia 'South Africa' 'South Korea' Spain Sweden Switzerland
-        Taiwan Thailand Turkey Ukraine 'United Kingdom' 'United States'
-        Vietnam
-    )
+    local countries_arch
+    local countries_antergos
+
+    # try get up-to-date countries from files
+
+    if [ -r /etc/remirror-arch-countries.txt ] ; then
+        readarray -t countries_arch < /etc/remirror-arch-countries.txt
+    else
+        countries_arch=(
+            Worldwide
+            Australia Austria Bangladesh Belarus Belgium
+            'Bosnia and Herzegovina' Brazil Bulgaria Canada Chile
+            China Colombia Croatia Czechia Denmark Ecuador Finland
+            France Georgia Germany Greece 'Hong Kong' Hungary Iceland India
+            Indonesia Iran Ireland Israel Italy Japan Kazakhstan Kenya
+            Latvia Lithuania Luxembourg Macedonia Mexico Netherlands
+            'New Caledonia' 'New Zealand' Norway Paraguay Philippines Poland
+            Portugal Qatar Romania Russia Serbia Singapore Slovakia
+            Slovenia 'South Africa' 'South Korea' Spain Sweden Switzerland
+            Taiwan Thailand Turkey Ukraine 'United Kingdom' 'United States'
+            Vietnam
+        )
+    fi
+    if [ -r /etc/remirror-antergos-countries.txt ] ; then
+        readarray -t countries_antergos < /etc/remirror-antergos-countries.txt
+    else
+        countries_antergos=(
+            'Automated Mirror Selection'
+            Bulgaria China 'Czech Republic' Denmark England
+            France Germany Greece Hungary
+            Japan Netherlands Portugal Russia Spain Sweden USA
+        )
+    fi
 
     local osfile=/tmp/remirror-os.tmp
     local os
