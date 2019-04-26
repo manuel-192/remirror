@@ -1,7 +1,7 @@
 # remirror
 Mirror ranking for Antergos and Arch. Does the same as [reflector-antergos](https://github.com/manuel-192/antergos-reflector) and more.
 <br>
-Note: this page is outdated, the latest package is available in [this](https://github.com/manuel-192/antergos-m) repo.
+Note: this page is outdated, the latest package is available at [this repo](https://github.com/manuel-192/antergos-m).
 ## Usage
 remirror --help
 ## Changes
