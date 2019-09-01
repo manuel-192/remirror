@@ -1,4 +1,6 @@
 # remirror
 Mirror ranking for Antergos and Arch.<br>
-Please check this link: https://github.com/manuel-192/antergos-m/blob/master/Changelogs/remirror.md
+
+NOTE: this page is outdated.
+Please check this [link](https://github.com/manuel-192/m-m) to see the latest of this package.
 
